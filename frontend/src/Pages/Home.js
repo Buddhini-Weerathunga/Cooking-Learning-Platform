@@ -2,6 +2,10 @@ import React, { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { FaHandsHelping } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
+
+import { FaVideo } from "react-icons/fa";
 import Carousel from "bootstrap/js/dist/carousel";
 import "../App.css"; // If you have your styles in App.css
 
@@ -114,31 +118,207 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      <section
+      <hr
         style={{
-          padding: "80px 20px",
-          backgroundColor: "#fff7ed",
-          textAlign: "center",
+          border: "none",
+          borderTop: "6px dotted #ff6804",
+          width: "100%",
+          margin: "0 auto",
         }}
-      >
-        <h2>About Us</h2>
-        <p>
-          We are passionate developers building web and mobile solutions with
-          modern tech like React, Kotlin, and Laravel.
-        </p>
-      </section>
-
+      />
       <section
         style={{
-          padding: "80px 20px",
+          height: "auto",
+          padding: "80px 5%",
           backgroundColor: "#ffedd5",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "'Madimi One'",
+            fontSize: "50px",
+            color: "rgb(245, 144, 77)",
+            textAlign: "center",
+            marginBottom: "50px",
+          }}
+        >
+          Our Services
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "40px",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}
+        >
+          {/* Left Column - Video */}
+          <div style={{ flex: "1 1 45%", textAlign: "center" }}>
+            <video
+              width="100%"
+              height="350"
+              marginBottom="20px"
+              controls
+              style={{
+                borderRadius: "12px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <source src="/videos/sample.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* Right Column - Cards */}
+          <div
+            style={{
+              flex: "1 1 45%",
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+            }}
+          >
+            {/* Card 1 */}
+            <div
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h4
+                style={{
+                  color: "#ff6804",
+                  fontFamily: "'Madimi One', sans-serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <FaVideo style={{ color: "#ff6804" }} />
+                Live Cooking Classes
+              </h4>
+
+              <p
+                style={{
+                  fontFamily: "'Madimi One', sans-serif",
+                  fontSize: "16px",
+                  color: "rgb(132, 120, 112)",
+                }}
+              >
+                Join live sessions with expert chefs and improve your skills in
+                real-time.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h4
+                style={{
+                  color: "#ff6804",
+                  fontFamily: "'Madimi One', sans-serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <FaHandsHelping style={{ color: "#ff6804" }} />
+                Skill Sharing
+              </h4>
+
+              <p
+                style={{
+                  fontFamily: "'Madimi One', sans-serif",
+                  fontSize: "16px",
+                  color: "rgb(132, 120, 112)",
+                }}
+              >
+                Learn from the community and share your unique cooking tips and
+                recipes.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              <h4
+                style={{
+                  color: "#ff6804",
+                  fontFamily: "'Madimi One', sans-serif",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <FaBookOpen style={{ color: "#ff6804" }} />
+                Recipe Library
+              </h4>
+
+              <p
+                style={{
+                  fontFamily: "'Madimi One', sans-serif",
+                  fontSize: "16px",
+                  color: "rgb(132, 120, 112)",
+                }}
+              >
+                Access a rich library of recipes sorted by cuisine, ingredients,
+                and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr
+        style={{
+          border: "none",
+          borderTop: "6px dotted #ff6804",
+          width: "100%",
+          margin: "0 auto",
+        }}
+      />
+      <section
+        style={{
+          height: "100vh",
+          padding: "80px 20px",
+          backgroundColor: "white",
           textAlign: "center",
         }}
       >
-        <h2>Contact</h2>
-        <p>Get in touch: info@example.com</p>
+        <h2
+          style={{
+            fontFamily: "'Madimi One'",
+            fontSize: "50px",
+            color: "rgb(245, 144, 77)",
+            marginTop: "-20px",
+          }}
+        >
+          Popular Courses
+        </h2>
       </section>
+      <hr
+        style={{
+          border: "none",
+          borderTop: "6px dotted #ff6804",
+          width: "100%",
+          margin: "0 auto",
+        }}
+      />
     </div>
   );
 };
