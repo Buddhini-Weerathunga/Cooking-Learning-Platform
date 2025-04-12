@@ -13,5 +13,13 @@
    
         npm start
 
-        
+##🛠️ How to Run Backend
+
+   1.Navigate to the backend project folder
+
+   2.Run the Spring Boot application
+
+        mvn spring-boot:run
+
+   
        
