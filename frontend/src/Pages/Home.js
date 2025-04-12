@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Carousel from "bootstrap/js/dist/carousel";
+import "../App.css"; // If you have your styles in App.css
 
 const HomePage = () => {
+  useEffect(() => {
+    const carouselElement = document.querySelector("#carouselExampleFade");
+    if (carouselElement) {
+      new Carousel(carouselElement, {
+        interval: 5000,
+        ride: "carousel",
+        pause: true,
+        wrap: true,
+      });
+    }
+  }, []);
+
   return (
     <div>
       <Navbar />
 
-      {/* Section 1 - Hero Section */}
       <section
         style={{
           height: "100vh",
@@ -19,13 +33,36 @@ const HomePage = () => {
           flexWrap: "wrap",
         }}
       >
-        {/* Text Content - Left Side */}
-        <div style={{ flex: "1 1 50%", textAlign: "left" }}>
-          <h1>Welcome to Our Site</h1>
-          <p>Your success starts here!</p>
+        <div style={{ flex: "1 1 50%", textAlign: "left", marginTop: "-10px" }}>
+          <h1 style={{ fontFamily: "'Madimi One'", fontSize: "110px" }}>
+            Welcome to <span style={{ color: "#ff6804" }}>EasyChef...</span>
+          </h1>
+
+          <h1
+            style={{
+              fontFamily: "'Madimi One'",
+              fontSize: "30px",
+              color: "rgb(245, 144, 77)",
+            }}
+          >
+            " Your Ultimate Cooking and Skill-Sharing Hub "
+          </h1>
+          <br />
+          <button
+            type="button"
+            class="btn  bg-lg"
+            style={{
+              height: "50px",
+              width: "150px",
+              borderColor: "#ff6804",
+              fontSize: "20px",
+              color: "#ff6804",
+            }}
+          >
+            Get Started
+          </button>
         </div>
 
-        {/* Image Slideshow - Right Side */}
         <div style={{ flex: "1 1 50%" }}>
           <div
             id="carouselExampleFade"
@@ -35,36 +72,40 @@ const HomePage = () => {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
-                  src="/images/slide1.jpg"
+                  src="/images/1.png"
                   className="d-block w-100"
                   alt="Slide 1"
                   style={{
-                    height: "400px",
-                    objectFit: "cover",
+                    marginTop: "30px",
+                    height: "500px",
+                    width: "500px",
+
                     borderRadius: "10px",
                   }}
                 />
               </div>
               <div className="carousel-item">
                 <img
-                  src="/images/slide2.jpg"
+                  src="/images/2.png"
                   className="d-block w-100"
                   alt="Slide 2"
                   style={{
-                    height: "400px",
-                    objectFit: "cover",
+                    marginTop: "30px",
+                    height: "650px",
+                    width: "650px",
                     borderRadius: "10px",
                   }}
                 />
               </div>
               <div className="carousel-item">
                 <img
-                  src="/images/slide3.jpg"
+                  src="/images/3.png"
                   className="d-block w-100"
                   alt="Slide 3"
                   style={{
-                    height: "400px",
-                    objectFit: "cover",
+                    marginTop: "30px",
+                    height: "650px",
+                    width: "650px",
                     borderRadius: "10px",
                   }}
                 />
@@ -74,7 +115,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Section 2 - About Section */}
       <section
         style={{
           padding: "80px 20px",
@@ -89,7 +129,6 @@ const HomePage = () => {
         </p>
       </section>
 
-      {/* Section 3 - Contact Section */}
       <section
         style={{
           padding: "80px 20px",
