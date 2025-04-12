@@ -155,18 +155,24 @@ const HomePage = () => {
           }}
         >
           {/* Left Column - Video */}
-          <div style={{ flex: "1 1 45%", textAlign: "center" }}>
+          <div
+            style={{
+              flex: "1 1 45%",
+              textAlign: "center",
+              padding: "20px",
+              backgroundColor: "#ffedd5",
+            }}
+          >
             <video
               width="100%"
               height="350"
-              marginBottom="20px"
               controls
               style={{
                 borderRadius: "12px",
                 boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
               }}
             >
-              <source src="/videos/sample.mp4" type="video/mp4" />
+              <source src="/videos/home.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
