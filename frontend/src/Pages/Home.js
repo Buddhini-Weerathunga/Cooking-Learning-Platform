@@ -302,7 +302,7 @@ const HomePage = () => {
         style={{
           height: "100vh",
           padding: "80px 20px",
-          backgroundColor: "white",
+          backgroundColor: "#fef6f0",
           textAlign: "center",
         }}
       >
