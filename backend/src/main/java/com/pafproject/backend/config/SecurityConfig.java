@@ -19,9 +19,10 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable()) // Important for Postman & frontend dev
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll() // Allow register/login
-                .anyRequest().authenticated()
-            )
+            .requestMatchers("/api/auth/**").permitAll()
+            .requestMatchers("/api/courses/**").permitAll() // 👈 temporarily open this
+            .anyRequest().authenticated()
+        )
             .cors(cors -> {}); // Enable CORS if you're using frontend like React
 
         return http.build();

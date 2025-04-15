@@ -8,18 +8,35 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      "http://localhost:8080/api/auth/login",
-      formData
-    );
-    if (response.data.success) {
-      if (response.data.role === "STUDENT") {
-        navigate("/student");
-      } else if (response.data.role === "INSTRUCTOR") {
-        navigate("/instructor");
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/auth/login",
+        formData
+      );
+
+      if (response.data.success) {
+        // Save user info in localStorage
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            username: formData.username,
+            password: formData.password, // Required for Basic Auth later
+            role: response.data.role,
+          })
+        );
+
+        // Navigate based on role
+        if (response.data.role === "STUDENT") {
+          navigate("/student");
+        } else if (response.data.role === "INSTRUCTOR") {
+          navigate("/instructor");
+        }
+      } else {
+        alert("Login failed");
       }
-    } else {
-      alert("Login failed");
+    } catch (error) {
+      alert("Login error");
+      console.error(error);
     }
   };
 

@@ -1,6 +1,7 @@
 package com.pafproject.backend.models;
 
 import jakarta.persistence.*;
+import java.util.List; // ✅ Important import for List
 
 @Entity
 public class User {
@@ -11,6 +12,9 @@ public class User {
     private String username;
     private String password;
     private String role; // STUDENT or INSTRUCTOR
+
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
+    private List<Course> courses; // ✅ Relationship with Course
 
     // --- Getters and Setters ---
 
@@ -44,5 +48,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
