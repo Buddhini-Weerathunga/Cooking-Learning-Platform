@@ -11,14 +11,14 @@ function App() {
     <Router>
       <Routes>
         {/* Home Page: PostForm + PostList */}
-        <Route path="/" element={
+       {/*<Route path="/" element={
           <div className="App">
             <h1>🍽️ Cooking Skill Sharing</h1>
             <PostForm />
             <hr />
             <PostList />
           </div>
-        } />
+        } />*/}
 
         {/* Other Pages */}
         <Route path="/view" element={<View />} />
