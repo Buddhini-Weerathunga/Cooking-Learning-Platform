@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { FaHandsHelping } from "react-icons/fa";
