@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
-    List<Course> findByInstructor_Username(String username); // ✅ Corrected method
+    List<Course> findByInstructor_Username(String username); // Correct method to fetch courses by instructor's username
 }

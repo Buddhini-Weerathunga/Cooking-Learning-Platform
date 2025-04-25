@@ -1,6 +1,7 @@
 package com.pafproject.backend.models;
 
-import jakarta.persistence.*; // Required for JPA annotations
+import java.time.LocalDate;
+import jakarta.persistence.*;
 
 @Entity
 public class Course {
@@ -11,6 +12,13 @@ public class Course {
 
     private String title;
     private String description;
+    private Double price;
+
+    private LocalDate startDate;
+    private LocalDate closingDate;
+
+    @Column(length = 10000) // Allows longer text for course content
+    private String content;
 
     @ManyToOne
     @JoinColumn(name = "instructor_id")
@@ -40,6 +48,38 @@ public class Course {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getClosingDate() {
+        return closingDate;
+    }
+
+    public void setClosingDate(LocalDate closingDate) {
+        this.closingDate = closingDate;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public User getInstructor() {

@@ -9,7 +9,8 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import StudentDashboard from "./Pages/StudentDashboard";
 import InstructorDashboard from "./Pages/InstructorDashboard";
-import FourSectionPage from "./Pages/Four";
+
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/student" element={<StudentDashboard />} />
           <Route path="/instructor" element={<InstructorDashboard />} />
-          <Route path="/four" element={<FourSectionPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </div>
