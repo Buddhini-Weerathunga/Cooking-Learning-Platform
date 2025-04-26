@@ -25,7 +25,7 @@ function PostList() {
         <div key={post.id} style={{ border: '1px solid gray', margin: '10px' }}>
           <p>{post.content}</p>
           {post.mediaType === 'image' ? (
-            <img src={post.mediaUrl} alt="" width="200" />1
+            <img src={post.mediaUrl} alt="" width="200" />
           ) : (
             <video src={post.mediaUrl} controls width="200" />
           )}
