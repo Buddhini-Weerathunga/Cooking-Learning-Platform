@@ -8,9 +8,10 @@ import Footer from "./Components/Footer";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import StudentDashboard from "./Pages/StudentDashboard";
-import InstructorDashboard from "./Pages/InstructorDashboard";
-
+import ListPost from "./Pages/Posts/ListPost";
 import Dashboard from "./Pages/Dashboard";
+import CreatePost from "./Pages/Posts/CreatePost";
+import UpdatePost from "./Pages/Posts/UpdatePost";
 
 function App() {
   return (
@@ -24,8 +25,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/student" element={<StudentDashboard />} />
-          <Route path="/instructor" element={<InstructorDashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/instructor" element={<Dashboard />} />
+
+          <Route path="/post/list" element={<ListPost />} />
+          <Route path="/post/create" element={<CreatePost />} />
+          <Route path="/post/update/:id" element={<UpdatePost />} />
         </Routes>
       </Router>
     </div>

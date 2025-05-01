@@ -26,4 +26,10 @@ public class CourseController {
     public List<Course> getCoursesByInstructor(@RequestParam String username) {
         return courseService.getCoursesByInstructor(username);
     }
+
+    // Endpoint to delete a course by its ID
+    @DeleteMapping("/delete")
+    public void deleteCourse(@RequestParam Long id) {
+        courseService.deleteCourse(id);
+    }
 }

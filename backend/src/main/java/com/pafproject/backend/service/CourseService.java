@@ -18,6 +18,7 @@ public class CourseService {
     @Autowired
     private UserRepository userRepo;
 
+    // Method to create a course
     public Course createCourse(String username, Course course) {
         User instructor = userRepo.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -25,7 +26,18 @@ public class CourseService {
         return courseRepo.save(course);
     }
 
+    // Method to get courses by instructor username
     public List<Course> getCoursesByInstructor(String username) {
-        return courseRepo.findByInstructor_Username(username); // ✅ Fixed method call
+        return courseRepo.findByInstructor_Username(username);
+    }
+
+    // Method to delete a course by its ID
+    public void deleteCourse(Long id) {
+        // Check if the course exists
+        Course course = courseRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Course not found with ID: " + id));
+
+        // Delete the course
+        courseRepo.delete(course);
     }
 }

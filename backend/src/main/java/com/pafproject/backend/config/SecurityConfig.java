@@ -21,6 +21,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
             .requestMatchers("/api/auth/**").permitAll()
             .requestMatchers("/api/courses/**").permitAll() // 👈 temporarily open this
+            .requestMatchers("/api/items/**").permitAll()
+            .requestMatchers("/api/posts/**").permitAll() 
+            .requestMatchers("/api/communities/**").permitAll() // 👈 temporarily open this
             .anyRequest().authenticated()
         )
             .cors(cors -> {}); // Enable CORS if you're using frontend like React

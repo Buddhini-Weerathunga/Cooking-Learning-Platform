@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaBell } from "react-icons/fa";
 
 function Navbar() {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <nav
       className="navbar navbar-expand-lg navbar  sticky-top shadow-sm"
@@ -32,9 +33,12 @@ function Navbar() {
             fontFamily: "'Madimi One', sans-serif",
             color: "black",
             fontWeight: "300",
+            wordSpacing: "5px", // Increase space between words
+            letterSpacing: "1px",
           }}
         >
-          Hello Instructor! Welcome to your dashboard.
+          Hello <span style={{ color: "#ff6804" }}>{user.username}</span> ,
+          Welcome to your dashboard.
         </span>
 
         {/* Icons on the right */}
