@@ -1,6 +1,7 @@
 package com.pafproject.backend.models;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "posts")
@@ -22,8 +23,12 @@ public class Post {
     @Column(name = "author", nullable = false)
     private String author;
 
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
     // Constructors
     public Post() {
+        this.createdAt = LocalDateTime.now();
     }
 
     public Post(String postName, String postTitle, String postContent, String author) {
@@ -31,12 +36,16 @@ public class Post {
         this.postTitle = postTitle;
         this.postContent = postContent;
         this.author = author;
+        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getPostName() {
@@ -70,5 +79,12 @@ public class Post {
     public void setAuthor(String author) {
         this.author = author;
     }
-}
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+}
