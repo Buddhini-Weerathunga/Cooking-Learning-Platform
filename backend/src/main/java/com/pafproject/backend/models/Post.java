@@ -11,24 +11,30 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String title;
+    @Column(name = "post_name", nullable = false)
+    private String postName;
 
-    @Column(columnDefinition = "TEXT")
-    private String description;
+    @Column(name = "post_title", nullable = false)
+    private String postTitle;
 
-    @Column(nullable = false)
+    @Column(name = "post_content", columnDefinition = "TEXT")
+    private String postContent;
+
+    @Column(name = "author", nullable = false)
     private String author;
 
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
+    // Constructors
     public Post() {
         this.createdAt = LocalDateTime.now();
     }
 
-    public Post(String title, String description, String author) {
-        this.title = title;
-        this.description = description;
+    public Post(String postName, String postTitle, String postContent, String author) {
+        this.postName = postName;
+        this.postTitle = postTitle;
+        this.postContent = postContent;
         this.author = author;
         this.createdAt = LocalDateTime.now();
     }
@@ -42,20 +48,28 @@ public class Post {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getPostName() {
+        return postName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setPostName(String postName) {
+        this.postName = postName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPostTitle() {
+        return postTitle;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
+    }
+
+    public String getPostContent() {
+        return postContent;
+    }
+
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 
     public String getAuthor() {

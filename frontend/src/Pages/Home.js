@@ -37,7 +37,7 @@ const HomePage = () => {
           flexWrap: "wrap",
         }}
       >
-        <div style={{ flex: "1 1 50%", textAlign: "left", marginTop: "-10px" }}>
+        <div style={{ flex: "1 1 50%", textAlign: "left", marginTop: "5px" }}>
           <h1 style={{ fontFamily: "'Madimi One'", fontSize: "110px" }}>
             Welcome to <span style={{ color: "#ff6804" }}>EasyChef...</span>
           </h1>
@@ -45,11 +45,13 @@ const HomePage = () => {
           <h1
             style={{
               fontFamily: "'Madimi One'",
-              fontSize: "30px",
+              fontSize: "27px",
               color: "rgb(245, 144, 77)",
             }}
           >
-            " Your Ultimate Cooking and Skill-Sharing Hub "
+            " Unlock step-by-step tutorials, delicious recipes, and expert tips
+            to become a confident cook—whether you're a beginner or a kitchen
+            pro! "
           </h1>
           <br />
           <button
